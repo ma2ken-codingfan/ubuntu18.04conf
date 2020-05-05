@@ -1,6 +1,9 @@
 #!/bin/sh
 
 MYHOME=/home/$USER
-cp $MYHOME/.bashrc $MYHOME/ubuntu18.04conf/backup
-cp $MYHOME/.tmux.conf $MYHOME/ubuntu18.04conf/backup
+BACKUPDIR=ubuntu18.04conf/backup
+
+
+cp $MYHOME/.bashrc $MYHOME/$BACKUPDIR
+cp $MYHOME/.tmux.conf $MYHOME/$BACKUPDIR
 
