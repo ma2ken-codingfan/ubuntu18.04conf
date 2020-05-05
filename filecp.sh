@@ -1,9 +1,11 @@
 #!/bin/sh
 
 MYHOME=/home/$USER
-BACKUPDIR=ubuntu18.04conf/backup
 
 
-cp $MYHOME/.bashrc $MYHOME/$BACKUPDIR
-cp $MYHOME/.tmux.conf $MYHOME/$BACKUPDIR
+cp $MYHOME/.bashrc backup
+cp $MYHOME/.tmux.conf backup
+cp $MYHOME/.vimrc backup
+
+cp /etc/apache2/sites-available/template.conf backup 
 
