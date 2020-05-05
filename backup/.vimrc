@@ -44,6 +44,10 @@ set clipboard=unnamed,autoselect
 
 " シンタックスハイライト
 syntax on
+
+"自動インデント"
+set autoindent
+
 " すべての数を10進数として扱う
 set nrformats=
 
