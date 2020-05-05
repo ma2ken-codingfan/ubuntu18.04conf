@@ -3,6 +3,7 @@
 MYHOME=/home/$USER
 
 
+rm -rf backup/* backup/.*
 cp $MYHOME/.bashrc backup
 cp $MYHOME/.tmux.conf backup
 cp $MYHOME/.vimrc backup
