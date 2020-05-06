@@ -91,7 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias python='/usr/bin/python3.8'
+alias pbcopy='xsel --clipboard --input'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -117,10 +117,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source /usr/share/powerline/bindings/bash/powerline.sh
-
-# 初回シェル時のみ tmux実行
+# 初回シェルのみ　tmux 実行
 if [ $SHLVL = 1 ]; then
 	tmux
 fi
-#[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
+
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  source /usr/share/powerline/bindings/bash/powerline.sh
+fi
