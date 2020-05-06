@@ -8,7 +8,8 @@ syntax on "コードの色分け
 set tabstop=2 "tabをスペース2つ分に設定
 set shiftwidth=0 "0の場合tabstopを引き継ぎインデントをスペース2つ分に設定
 set expandtab "tabは一切使わない
-set smartindent "オートインデント
+set autoindent "インデント自動的に行う。shiftwidthとセットで使用すると便利。
+set smartindent "autoindent有効時のみ作動
 
 "#python
 autocmd FileType python setlocal tabstop=4 shiftwidth=0 expandtab
