@@ -122,10 +122,18 @@ if [ $SHLVL = 1 ]; then
 	tmux
 fi
 
+function _update_ps1() {
+	PS1=$(powerline-shell $?)
+}
 
-if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  source /usr/share/powerline/bindings/bash/powerline.sh
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+	    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+
+
+#if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  source /usr/share/powerline/bindings/bash/powerline.sh
+#fi
